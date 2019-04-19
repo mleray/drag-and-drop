@@ -1,4 +1,1 @@
-export default [{
-    name: 'Pony',
-    image: '../images/pony.jpg'
-}];
+export default ['Pony', 'Dog', 'Cat', 'Snake', 'Parrot', 'Rabbit'];

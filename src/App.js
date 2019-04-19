@@ -1,17 +1,39 @@
 import React from 'react';
-import dnd from './helpers/dragAndDrop';
+import injectSheet from 'react-jss';
+import { object } from 'prop-types';
 
-const App = () => (
-	<div>
-		<p id="draggable-p" onDragStart={event => dnd.drag(event)} draggable="true">
-			Drag me
-		</p>
-		<div
-			style={{ width: 100, height: 100, border: 'thin solid black' }}
-			onDrop={event => dnd.drop(event)}
-			onDragOver={event => dnd.allowDrop(event)}
-		/>
+// Components
+import DraggableItem from './components/DraggableItem';
+import DropArea from './components/DropArea';
+
+// Constants
+import PETS from './constants/pets';
+
+const styles = {
+	container: {
+		fontFamily: 'Arial, Helvetica, sans-serif',
+		width: '100%',
+		height: '100%'
+	},
+	items: {
+		display: 'flex',
+		justifyContent: 'space-around'
+	}
+};
+
+const App = ({ classes }) => (
+	<div className={classes.container}>
+		<div className={classes.items}>
+			{PETS.map(pet => (
+				<DraggableItem key={pet} name={pet} />
+			))}
+		</div>
+		<DropArea />
 	</div>
 );
 
-export default App;
+App.propTypes = {
+	classes: object.isRequired
+};
+
+export default injectSheet(styles)(App);
