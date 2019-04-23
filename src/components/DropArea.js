@@ -7,11 +7,10 @@ import dnd from '../helpers/dragAndDrop';
 
 const styles = {
 	container: {
-		border: 'thin solid grey',
+		border: 'thin dotted grey',
 		borderRadius: 4,
-		maxWidth: 300,
-		height: '100%',
-		margin: '50px auto'
+		height: 52,
+		margin: 10
 	}
 };
 

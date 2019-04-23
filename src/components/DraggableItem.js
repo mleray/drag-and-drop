@@ -11,9 +11,6 @@ const styles = {
 		borderRadius: 4,
 		padding: '0 30px',
 		backgroundColor: 'lightgrey',
-		textAlign: 'center',
-		flex: 1,
-		margin: '0 10px',
 		cursor: 'pointer',
 		'&:hover': {
 			backgroundColor: 'lightblue'
