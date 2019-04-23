@@ -19,13 +19,15 @@ const styles = {
 };
 
 const DraggableItem = ({ classes, name }) => (
-	<div
-		id={name.toLowerCase()}
-		className={classes.container}
-		draggable="true"
-		onDragStart={event => dnd.drag(event)}
-	>
-		<p> {name} </p>
+	<div>
+		<div
+			id={name.toLowerCase()}
+			className={classes.container}
+			draggable="true"
+			onDragStart={event => dnd.drag(event)}
+		>
+			<p> {name} </p>
+		</div>
 	</div>
 );
 
