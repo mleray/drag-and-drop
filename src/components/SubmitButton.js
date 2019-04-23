@@ -3,7 +3,19 @@ import { object, func } from 'prop-types';
 import injectSheet from 'react-jss';
 
 const styles = {
-	submitButton: {}
+	submitButton: {
+		padding: 10,
+		fontSize: 18,
+		borderRadius: 4,
+		backgroundColor: 'palevioletred',
+		cursor: 'pointer',
+		color: 'white',
+		borderColor: 'transparent',
+		outline: 'none',
+		'&:hover': {
+			backgroundColor: 'pink'
+		}
+	}
 };
 
 const SubmitButton = ({ classes, handler }) => (
