@@ -22,14 +22,12 @@ const generateDropAreas = amount => {
 	return dropAreas;
 };
 
-const DropAreas = ({ amount, classes }) => {
-	return (
-		<div className={classes.dropAreas}>
-			<h3> Your ranking </h3>
-			{generateDropAreas(amount)}
-		</div>
-	);
-};
+const DropAreas = ({ amount, classes }) => (
+	<div className={classes.dropAreas}>
+		<h3> Your ranking </h3>
+		{generateDropAreas(amount)}
+	</div>
+);
 
 DropAreas.propTypes = {
 	amount: number,
