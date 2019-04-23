@@ -1,0 +1,1 @@
+export default ['Burger', 'Pizza', 'Wok', 'Salad', 'Pasta', 'Sushi'];

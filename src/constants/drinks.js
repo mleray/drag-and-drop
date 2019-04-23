@@ -1,0 +1,1 @@
+export default ['Beer', 'Wine', 'Juice', 'Lemonade', 'Cider', 'Coke'];
