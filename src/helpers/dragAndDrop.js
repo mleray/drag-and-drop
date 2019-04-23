@@ -13,7 +13,7 @@ const functions = {
     areAllItemsDragged() {
         const dropAreas = document.getElementsByClassName('drop-area');
         const emptyDropAreas = Array.from(dropAreas).filter(dropArea => !dropArea.childNodes || !dropArea.childNodes.length);
-        return emptyDropAreas.length === 0;
+        return !emptyDropAreas.length;
     }
 };
 
