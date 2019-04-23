@@ -1,6 +1,6 @@
 # drag-and-drop
 
-Trying out HTML's native drag and drop features
+Trying out HTML's native drag and drop features, plus Parcel bundler (https://parceljs.org/)
 
 # Getting the project up and running
 
