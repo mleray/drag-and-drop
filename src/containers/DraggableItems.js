@@ -13,7 +13,7 @@ const styles = {
 };
 
 const DraggableItems = ({ classes, items }) => (
-	<div className={classes.items}>
+	<div id="draggable-items" className={classes.items}>
 		{items.map(item => (
 			<DraggableItem key={item.toLowerCase()} name={item} />
 		))}

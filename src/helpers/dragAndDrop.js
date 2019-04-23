@@ -9,6 +9,11 @@ const functions = {
         event.preventDefault();
         const data = event.dataTransfer.getData('text');
         event.target.appendChild(document.getElementById(data));
+    },
+    areAllItemsDragged() {
+        const dropAreas = document.getElementsByClassName('drop-area');
+        const emptyDropAreas = Array.from(dropAreas).filter(dropArea => !dropArea.childNodes || !dropArea.childNodes.length);
+        return emptyDropAreas.length === 0;
     }
 };
 

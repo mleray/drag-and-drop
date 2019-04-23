@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { object, func } from 'prop-types';
 import injectSheet from 'react-jss';
+
+// Context
+import { SubmitContext } from '../context/SubmitContext';
 
 const styles = {
 	submitButton: {
@@ -14,15 +17,30 @@ const styles = {
 		outline: 'none',
 		'&:hover': {
 			backgroundColor: 'pink'
+		},
+		'&:disabled': {
+			backgroundColor: 'pink',
+			cursor: 'not-allowed'
 		}
 	}
 };
 
-const SubmitButton = ({ classes, handler }) => (
-	<button className={classes.submitButton} onClick={() => handler()}>
-		Submit
-	</button>
-);
+const SubmitButton = ({ classes, handler }) => {
+	const { submitDisabled, setSubmitDisabled } = useContext(SubmitContext);
+
+	return (
+		<button
+			disabled={submitDisabled}
+			className={classes.submitButton}
+			onClick={() => {
+				handler();
+				setSubmitDisabled(true);
+			}}
+		>
+			Submit
+		</button>
+	);
+};
 
 SubmitButton.propTypes = {
 	classes: object.isRequired,
