@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 import { object } from 'prop-types';
 
@@ -15,7 +15,7 @@ import FOODS from './constants/foods';
 import DRINKS from './constants/drinks';
 
 // Context
-import SubmitProvider, { SubmitContext } from './context/SubmitContext';
+import SubmitProvider from './context/SubmitContext';
 
 const styles = {
 	container: {
