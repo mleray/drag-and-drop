@@ -14,28 +14,30 @@ const styles = {
 	}
 };
 
-const generateDropAreas = amount => {
+const generateDropAreas = (amount, index) => {
 	let dropAreas = [];
 	for (let i = 1; i <= amount; i++) {
-		dropAreas.push(<DropArea key={`dropArea-${i}`} />);
+		dropAreas.push(<DropArea key={`dropArea-${index}-${i}`} />);
 	}
 	return dropAreas;
 };
 
-const DropAreas = ({ amount, classes }) => (
+const DropAreas = ({ amount, index, classes }) => (
 	<div className={classes.dropAreas}>
 		<h3> Your ranking </h3>
-		{generateDropAreas(amount)}
+		{generateDropAreas(amount, index)}
 	</div>
 );
 
 DropAreas.propTypes = {
 	amount: number,
-	classes: object.isRequired
+	classes: object.isRequired,
+	index: number
 };
 
 DropAreas.defaultProps = {
-	amount: 6
+	amount: 6,
+	index: 0
 };
 
 export default injectSheet(styles)(DropAreas);

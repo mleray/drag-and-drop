@@ -47,7 +47,10 @@ const App = ({ classes }) => {
 					<div>
 						<h2>Please rank the following items:</h2>
 						<Items items={ITEMS[currentItems]} />
-						<DropAreas amount={ITEMS[currentItems].length} />
+						<DropAreas
+							amount={ITEMS[currentItems].length}
+							index={currentItems}
+						/>
 						<SubmitButton handler={submit} />
 					</div>
 				) : (
