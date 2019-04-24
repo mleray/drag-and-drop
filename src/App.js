@@ -26,13 +26,13 @@ const styles = {
 	}
 };
 
-const items = [PETS, FOODS, DRINKS];
+const ITEMS = [PETS, FOODS, DRINKS];
 
 const App = ({ classes }) => {
 	const [currentItems, setCurrentItems] = useState(0);
 
 	const submit = () => {
-		if (currentItems < items.length - 1) {
+		if (currentItems < ITEMS.length - 1) {
 			setCurrentItems(currentItems + 1);
 		} else {
 			// This means that we are done with ranking all the items
@@ -46,8 +46,8 @@ const App = ({ classes }) => {
 				{currentItems > -1 ? (
 					<div>
 						<h2>Please rank the following items:</h2>
-						<Items items={items[currentItems]} />
-						<DropAreas amount={items[currentItems].length} />
+						<Items items={ITEMS[currentItems]} />
+						<DropAreas amount={ITEMS[currentItems].length} />
 						<SubmitButton handler={submit} />
 					</div>
 				) : (
